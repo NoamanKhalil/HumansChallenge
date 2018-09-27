@@ -42,4 +42,16 @@ public class GameManager : MonoBehaviour
         Score ++;
     }
 
+    //saves score
+    public void saveScore()
+    {
+        //TODO:save score , comapre score and check if its higher and save it 
+
+        int tempScore = PlayerPrefs.GetInt("highestScore");
+        if (Score >tempScore)
+        {
+            PlayerPrefs.SetInt("highestScore", Score);
+        }
+
+    }
 }

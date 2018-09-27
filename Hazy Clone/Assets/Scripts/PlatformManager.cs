@@ -32,9 +32,26 @@ public class PlatformManager : MonoBehaviour
     [SerializeField]
     private Vector3 []tempPos;
 
+
+    // qeue to keep track of platfroms
+    public Queue<GameObject> platforms = new Queue<GameObject>();
+
+
+    public static PlatformManager instance { get; private set; }
+
     // of instantiations 
     int tempCount;
 
+
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+    }
     // Use this for initialization
     void Start()
     {
@@ -50,30 +67,38 @@ public class PlatformManager : MonoBehaviour
     }
     // instatiates a random platform every 1 second , at tempPos & increases the y every time.
     //every time a object spawn it will be 4 units away 
-    // after 5 objects are spawned it will reset to the original start positon 
+    // after 5 objects are spawned it will stop spawning and only spawn once the first objects have been removed from the qeue  
     IEnumerator Spawn()
     {
         while (true)
         {
-
-            int randomNum = Random.Range(0, 2);
-            Instantiate(easyPlatforms[Random.Range(0, easyPlatforms.Length)], tempPos[randomNum], Quaternion.identity);
-            // every time it runs it needs to be pos.z + 1 five times then reset to the initial position 
-            if (tempCount <= 5)
+            if (platforms.Count <=5)
             {
+                // to randomize spawn positons
+                int randomNum = Random.Range(0, 2);
+                // to keep add instantiated objects to the qeue
+                GameObject go;
+                go = Instantiate(easyPlatforms[Random.Range(0, easyPlatforms.Length)], tempPos[randomNum], Quaternion.identity);
+                // adds instantiated objects to the qeue
+                platforms.Enqueue(go);
+                // every time it runs it needs to be pos.z + 1 five times then reset to the initial position 
+                if (tempCount <= 5)
+                {
 
-                tempPos[0].z = tempPos[0].z + 4;
-                tempPos[1].z = tempPos[1].z + 4;
-                tempPos[2].z = tempPos[2].z + 4;
+                    tempPos[0].z = tempPos[0].z + 4;
+                    tempPos[1].z = tempPos[1].z + 4;
+                    tempPos[2].z = tempPos[2].z + 4;
 
-                tempCount++;
-            }
-            else
-            {
-                tempPos[0] = startPos[0].transform.position;
-                tempPos[1] = startPos[1].transform.position;
-                tempPos[2] = startPos[2].transform.position;
-                tempCount = 0;
+                    tempCount++;
+                }
+                else
+                {
+                    tempPos[0] = startPos[0].transform.position;
+                    tempPos[1] = startPos[1].transform.position;
+                    tempPos[2] = startPos[2].transform.position;
+                    tempCount = 0;
+                }
+
             }
 
 
@@ -81,4 +106,13 @@ public class PlatformManager : MonoBehaviour
         }
     }
 
+
+    public void enqueeThis(GameObject go)
+    {
+        platforms.Enqueue(go);
+    }
+    /*public void denqueeThis(GameObject go)
+    {
+        platforms.Dequeue(go);
+    }*/
 }

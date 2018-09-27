@@ -687,7 +687,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 778193166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.12, y: -6, z: 16}
+  m_LocalPosition: {x: -2.12, y: -6, z: 11.62}
   m_LocalScale: {x: 9.348371, y: 6.1425323, z: 1.9546506}
   m_Children: []
   m_Father: {fileID: 0}
@@ -710,7 +710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4259912244994218, guid: 2832f72809cc142f3880e7b51bff1cc2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 12.6
+      value: 9.48
       objectReference: {fileID: 0}
     - target: {fileID: 4259912244994218, guid: 2832f72809cc142f3880e7b51bff1cc2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -904,7 +904,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4910163356506522, guid: b69c30d04bc0f4b55b8a0c4f07dc2ebd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9.35
+      value: 6.23
       objectReference: {fileID: 0}
     - target: {fileID: 4910163356506522, guid: b69c30d04bc0f4b55b8a0c4f07dc2ebd, type: 2}
       propertyPath: m_LocalRotation.x
@@ -945,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1152469047
 ParticleSystemRenderer:
   serializedVersion: 5
@@ -1188,7 +1188,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.8117647, g: 1, b: 0.76862746, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1643,7 +1643,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -5690,6 +5690,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 5
+  isFalling: 0
+  canMove: 0
 --- !u!65 &1222722127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5847,7 +5849,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198041978583174, guid: f9996100d4e194d3e92edf638414d3ae, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.26
+      value: 3.1399999
       objectReference: {fileID: 0}
     - target: {fileID: 4198041978583174, guid: f9996100d4e194d3e92edf638414d3ae, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5894,7 +5896,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2000423258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: 16}
+  m_LocalPosition: {x: 0, y: -6, z: 11.62}
   m_LocalScale: {x: 9.348371, y: 6.1425323, z: 1.9546506}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5922,7 +5924,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057554326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.16, y: -6, z: 16}
+  m_LocalPosition: {x: 2.16, y: -6, z: 11.62}
   m_LocalScale: {x: 9.348371, y: 6.1425323, z: 1.9546506}
   m_Children: []
   m_Father: {fileID: 0}
